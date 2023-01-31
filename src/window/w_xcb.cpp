@@ -11,7 +11,7 @@ namespace crow::window
         xcb_gcontext_t gcontext;
     };
 
-    Window::Window() : pImpl(new impl), state(State::EXIT)
+    Window::Window(): pImpl(new impl), state(State::EXIT)
     {
         pImpl->connection = std::shared_ptr<xcb_connection_t>(xcb_connect(nullptr, nullptr), [](xcb_connection_t* c){ xcb_disconnect(c); });
         if (xcb_connection_has_error(pImpl->connection.get())) {

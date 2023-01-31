@@ -13,6 +13,8 @@ if(ANDROID)
 else()
     find_package(PkgConfig MODULE)
     find_package(glog REQUIRED)
+    find_package(TBB REQUIRED)
+    find_package(RapidJSON REQUIRED)
     find_package(X11)
 
     pkg_check_modules(XRANDR xrandr)
